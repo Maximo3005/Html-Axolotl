@@ -1,0 +1,154 @@
+
+  
+  img {
+ 
+  height: 40%;
+  width:  40%;
+}
+.m {
+	position: absolute;
+	left: 50px;
+	top:  550px;
+	z-index:1;
+}
+p {
+	color:white; 
+}
+a{
+	color:#b987ea;
+}
+
+h1{
+	color:#b9e6ff
+}
+
+@property --gradient-angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+:root {
+  --clr-1: #052b2f;
+  --clr-2: #073438;
+  --clr-3: #0e4b50;
+  --clr-4: #2d8f85;
+  --clr-5: #637c54;
+  --clr-8: #564080;
+  --clr-7: #b9e6ff;
+  --clr-6: #8effe2;
+}
+.card {
+  height: 10vh;
+  position:absolute;
+  left:40px;
+  top:50px;
+  width: 31vh;
+  aspect-ratio: 1 / 1.5;
+  background: var(--clr-1);
+  border-radius: 0.5rem;
+
+  position: relative;
+}
+
+.card::before,
+.card::after {
+  content: "";
+  position: absolute;
+  inset: -0.5rem;
+  z-index: -1;
+  background: conic-gradient(
+    from var(--gradient-angle),
+    var(--clr-3),
+    var(--clr-4),
+    var(--clr-5),
+    var(--clr-4),
+    var(--clr-3)
+  );
+  border-radius: inherit;
+  animation: rotation 20s linear infinite;
+}
+
+.card::after {
+  filter: blur(2.5rem);
+}
+
+@keyframes rotation {
+  0% {
+    --gradient-angle: 0deg;
+  }
+  100% {
+    --gradient-angle: 360deg;
+  }
+}
+
+
+.blu {
+	position: absolute;
+	top: 27px;
+	left:1010px;
+	height:187vh;
+	width:149vh;
+	z-index:1;
+	border-radius: 0.5rem;
+}
+
+
+.card2 {
+  height: 75vh;
+  position:absolute;
+  left:1000px;
+  top:-600px;
+  width: 60vh;
+  aspect-ratio: 1 / 1.5;
+  background: var(--clr-1);
+  border-radius: 0.5rem;
+
+  position: relative;
+}
+
+.card2::before,
+.card2::after {
+  content: "";
+  position: absolute;
+  inset: -0.5rem;
+  z-index: -1;
+  background: conic-gradient(
+    from var(--gradient-angle),
+    var(--clr-6),
+    var(--clr-7),
+    var(--clr-8),
+    var(--clr-7),
+    var(--clr-6)
+  );
+  border-radius: inherit;
+  animation: rotation 20s linear infinite;
+}
+
+.card2::after {
+  filter: blur(2.5rem);
+}
+section.background {
+  background-color: #313466;
+  background-image: conic-gradient(
+      from 330deg at 50% 60%,
+      #11ffbb 60deg,
+      transparent 60deg),
+    conic-gradient(from 150deg at 50% 30%, #5255bb 60deg, transparent 60deg);
+  background-size: 3rem 3rem;
+  background-position: 0 0, 1.5rem -0.5rem;
+  z-index:-3;
+  opacity :10%;
+  
+}
+body {
+  background: #111213;
+  background-position: center
+}
+
+section {
+  aspect-ratio: 1;
+  width: 300dvmin;
+  margin: -100rem auto;
+  box-shadow: 0 0 2rem rgb(0 0 0 / 1);
+}
